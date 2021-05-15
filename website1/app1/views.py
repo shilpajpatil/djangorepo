@@ -3,12 +3,21 @@ from django.shortcuts import render, HttpResponse
 # Create your views here.
 
 def home(request):
-    return HttpResponse("This is home")
+    senderdata ={
+        'name': 'Shilpa',
+        'surname': 'patil'
+    }
+    return render(request,'index.html',senderdata)
 
 def about(request):
-    return HttpResponse("This is about")
+
+
+    return render(request,'about.html')
 def contact(request):
-    return HttpResponse("This is contact")
+    senderdata ={
+        'contact_number':'8149129655'
+    }
+    return render(request, 'contact.html', senderdata)
 
 def careers(request):
-    return HttpResponse("This is careers")
+    return render(request,'careers.html')
